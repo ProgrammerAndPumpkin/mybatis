@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.mapper.UserMapper">
+
+	<!-- 返回值类型 -->
+    <resultMap id="user_map" type="com.mybatis.entity.User">
+        <id column="id" property="id" />
+        <result column="nick" property="nick" />
+        <result column="email" property="email" />
+        <result column="phone" property="phone" />
+    </resultMap>
+    
+	<!-- 可重用代码段 -->
+    <sql id="user_column_list">
+        id, nick, email, phone
+    </sql>
+
+	<!-- 查询语句 -->
+    <select id="findByUserKey" resultMap="user_map" parameterType="int">
+        select
+        <!-- 包含引用 -->
+        <include refid="user_column_list" />
+        from user
+        where id = #{id}
+    </select>
+    
+</mapper>
