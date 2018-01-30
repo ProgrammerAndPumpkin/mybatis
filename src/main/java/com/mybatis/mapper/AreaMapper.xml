@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.mapper.AreaMapper">
+
+	<!-- 返回值类型 -->
+    <!-- <resultMap id="map" type="com.mybatis.entity.Area">
+        <id column="areaId" property="areaId" />
+        <result column="parentId" property="parentId" />
+        <result column="areaCode" property="areaCode" />
+        <result column="areaName" property="areaName" />
+    </resultMap> -->
+    
+	<!-- 可重用代码段 -->
+    <sql id="column_list">
+        areaId, parentId, areaCode, areaName
+    </sql>
+
+	<!-- 查询语句 -->
+    <select id="queryChildren"  resultType="com.mybatis.entity.Area"> <!-- resultMap="map" parameterType="string" -->
+        select <!-- <include refid="column_list" /> --> * from base_area where parentId = #{parentId}
+    </select>
+    
+</mapper>
