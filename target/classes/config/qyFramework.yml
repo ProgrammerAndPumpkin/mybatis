@@ -1,0 +1,55 @@
+druid:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/databse?characterEncoding=utf-8
+#  username: user
+#  password: password
+
+#  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  url: jdbc:sqlserver://localhost:1433;DatabaseName=databse
+#  username: user
+#  password: password
+  
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@127.0.0.1:1521:ORCLE
+  username: user
+  password: password
+  validationQuery: SELECT 1 from dual
+#  validationQuery: SELECT 1 
+  
+  initialSize: 2
+  maxActive: 300
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQueryTimeout: 10
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: false
+  maxPoolPreparedStatementPerConnectionSize: 200
+  
+redis: 
+  ip: 127.0.0.1
+#  port: 6379
+#  password: 123456
+#  maxTotal: 1
+#  maxIdle: 1
+#  minIdle: 1
+#  lifo: false
+#  fairness: false
+#  maxWaitMillis: 1
+#  minEvictableIdleTimeMillis: 1
+#  softMinEvictableIdleTimeMillis: 1
+#  numTestsPerEvictionRun: 1
+#  testOnCreate: false
+#  testOnBorrow: false
+#  testOnReturn: false
+#  testWhileIdle: false
+#  timeBetweenEvictionRunsMillis: 1
+#  blockWhenExhausted: false
+#  jmxEnable: false
+#  jmxNamePrefix: abc
+#  jmxNameBase: abc
+#  evictionPolicyClassName: abc
+  
+  
